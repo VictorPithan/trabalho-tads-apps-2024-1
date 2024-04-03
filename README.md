@@ -19,11 +19,11 @@ Before running the application, you need to have Node.js installed on your devel
 
 1. Clone this repository:
 
-git clone https://github.com/your-username/repository-name.git
+git clone https://github.com/VictorPithan/trabalho-tads-apps-2024-1
 
 2. Install the project dependencies:
 
-cd repository-name
+cd trabalho-tads-apps-2024-1
 npm install
 
 ## Execution
