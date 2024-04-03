@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { Button, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { PAGES } from "../utils/pages-labels";
 
-export default function Quiz({user}) {
+export default function Quiz({user, navigate}) {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [score, setScore] = useState(0);
   const [showScore, setShowScore] = useState(false);
@@ -36,6 +37,26 @@ export default function Quiz({user}) {
       question: "O que significa a sigla 'API' em desenvolvimento de software?",
       options: ["Advanced Programming Interface", "Application Programming Interface", "Automated Processing Interface", "Algorithmic Programming Interface", "Application Protocol Integration"],
       answer: "Application Programming Interface"
+    },
+    {
+      question: "Qual é o principal conceito em React que permite a reutilização de código e a construção de interfaces de usuário compostas?",
+      options: ["State", "Props", "Hooks", "Components", "Modules"],
+      answer: "Components"
+    },
+    {
+      question: "No React, qual é a função principal do método `setState()`?",
+      options: ["Definir o estado inicial de um componente", "Atualizar o estado de um componente e re-renderizá-lo", "Acessar os dados de uma API externa", "Definir os props de um componente", "Definir o estado global da aplicação"],
+      answer: "Atualizar o estado de um componente e re-renderizá-lo"
+    },
+    {
+      question: "Qual é a biblioteca utilizada para criar interfaces de usuário em dispositivos móveis utilizando JavaScript e React?",
+      options: ["React Native", "Expo", "Flutter", "Ionic", "Xamarin"],
+      answer: "React Native"
+    },
+    {
+      question: "Qual dos seguintes não é um componente básico do React Native para criar uma interface de usuário?",
+      options: ["View", "Text", "Button", "Div", "Image"],
+      answer: "Div"
     }
   ];
 
@@ -57,11 +78,18 @@ export default function Quiz({user}) {
     setShowScore(false);
   };
 
+  const handleGoToHome = () => {
+    navigate(PAGES.SIGN_UP)
+  };
+
   return (
     <View style={styles.container}>
       {showScore ? (
         <View style={styles.scoreContainer}>
-          <Text style={styles.scoreText}>{user.name} seu score foi: {score} / {quizQuestions.length}</Text>
+          <Text style={styles.scoreText}>Seu score foi: {score} / {quizQuestions.length}</Text>
+          <Text style={styles.subtitle}>Será enviado para o seu e-mail {user.email}, as suas respostas e seu score final.</Text>
+          <Text style={styles.subtitle}>Obrigado por participar do nosso quiz!</Text>
+          <Button title="Início" onPress={handleGoToHome} />
           <Button title="Tentar Novamente" onPress={resetQuiz} />
         </View>
       ) : (
@@ -98,10 +126,15 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
+    paddingHorizontal: 30,
+    gap: 20
   },
   questionText: {
     fontSize: 20,
-    marginBottom: 20,
+    textAlign: 'center',
+  },
+  subtitle: {
+    fontSize: 18,
     textAlign: 'center',
   },
   optionButton: {
