@@ -13,14 +13,14 @@ export default function Quiz({user}) {
       answer: "JavaScript"
     },
     {
-      question: "Qual estrutura de dados organiza os elementos em uma sequência ordenada e permite acesso rápido aos elementos?",
-      options: ["Árvore", "Fila", "Pilha", "Lista ligada", "Array"],
-      answer: "Array"
+      question: "Qual dos seguintes não é um tipo de dado primitivo em JavaScript?",
+      options: ["String", "Boolean", "Object", "Number", "Undefined"],
+      answer: "Object"
     },
     {
-      question: "Qual dos seguintes não é um paradigma de programação?",
-      options: ["Orientação a Objetos", "Programação Procedural", "Programação Linear", "Programação Funcional", "Programação Lógica"],
-      answer: "Programação Linear"
+      question: "Qual é a palavra-chave utilizada em JavaScript para definir uma variável que não pode ser reatribuída?",
+      options: ["const", "let", "var", "final", "static"],
+      answer: "const"
     },
     {
       question: "Qual é a principal função do comando 'git commit' no controle de versão Git?",
@@ -31,6 +31,11 @@ export default function Quiz({user}) {
       question: "Qual dos seguintes é um conceito fundamental em programação orientada a objetos?",
       options: ["Polimorfismo", "Herança múltipla", "Recursão", "Ponteiros", "Instrução if-else"],
       answer: "Polimorfismo"
+    },
+    {
+      question: "O que significa a sigla 'API' em desenvolvimento de software?",
+      options: ["Advanced Programming Interface", "Application Programming Interface", "Automated Processing Interface", "Algorithmic Programming Interface", "Application Protocol Integration"],
+      answer: "Application Programming Interface"
     }
   ];
 
