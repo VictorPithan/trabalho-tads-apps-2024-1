@@ -24,7 +24,7 @@ export function Form({navigate, userRegister}) {
       alert("Por favor, preencha todos os campos obrigatórios.");
       return;
     }
-    navigate(PAGES.QUIZ)
+    navigate(PAGES.HOME)
   }
   return (
     <View>
