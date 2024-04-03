@@ -1,4 +1,5 @@
 export const PAGES = {
-  SIGN_UP: "Home",
-  QUIZ: "SignUp",
+  SIGN_UP: "SignUp",
+  HOME: "Home",
+  QUIZ: "Quiz",
 };
